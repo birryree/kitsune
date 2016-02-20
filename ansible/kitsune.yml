@@ -1,0 +1,12 @@
+---
+- hosts: kitsune
+  name: Apply kitsune host configuration
+  remote_user: admin
+  sudo: yes
+  gather_facts: true
+
+  roles:
+    - base
+    - nginx
+    - ghost
+#    - pcp

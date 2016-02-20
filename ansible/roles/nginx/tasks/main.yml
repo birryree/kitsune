@@ -1,0 +1,8 @@
+- name: Add nginx apt repository
+  apt_repository: repo="deb http://nginx.org/packages/mainline/debian jessie nginx" state=present
+
+- name: Add nginx apt key
+  apt_key: url=http://nginx.org/keys/nginx_signing.key state=present id=7BD9BF62
+
+- name: Install nginx
+  apt: name=nginx update_cache=yes state=latest cache_valid_time=3600 force=yes 

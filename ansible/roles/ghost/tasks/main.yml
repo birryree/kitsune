@@ -1,0 +1,3 @@
+---
+- name: Download and explode ghost
+  unarchive: src=https://github.com/TryGhost/Ghost/releases/download/0.7.8/Ghost-0.7.8.zip dest=/opt/ghost copy=no

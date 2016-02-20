@@ -1,0 +1,9 @@
+---
+- name: Add nodesource apt repository
+  apt_repository: repo="https://deb.nodesource.com/node_5.x/dists/debian/Release" state=present
+
+- name: Add nodesource apt key
+  apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present id=68576280
+
+- name: Install nodejs
+  apt: name=nodejs update_cache=yes state=latest cache_valid_time=3600 force=yes
